@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 100px 50px 1fr;
+  grid-template-rows:80px calc(100vh - 80px);
+  grid-template-areas:
+    "nav nav header header "
+    "nav nav section section"
+    "nav nav section section"
+}
+header {
+  background-color: orange;
+  grid-area: header;
+
+}
+nav {
+  background-color: cornflowerblue;
+  grid-area: nav;
+}
+section {
+  background-color: lightgrey;
+  grid-area: section;
+}
