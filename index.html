@@ -1,17 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <header></header>
-      <nav></nav>
-      <section></section>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var wr = document.createElement('div');
+    wr.className = 'wrapper';
+    document.body.appendChild(wr);
+
+    var mainHead = document.createElement('h1');
+    wr.appendChild(mainHead);
+    mainHead.innerHTML = ('Choose boat that make you happier!')
+
+
+    var arr = [
+      {name:'Small Boat',image:'sb.jpg',description:'Baby',price:'$ 169.98 '},
+      {name:'Medium Boat',image:'mb.jpg',description:'Teenage',price:'$ 239,000.00 '},
+      {name:'Large Boat',image:'lb.jpg',description:'Adult',price:'$ 2,999,998.98 '},
+      {name:'Big Boat',image:'bb.jpg',description:'Grandpa',price:'$ 14,999,999.98 '}
+    ];
+    for (var i = 0; i < arr.length; i++){
+        var block = document.createElement('div');
+        block.className = 'box';
+        wr.appendChild(block);
+
+        var head = document.createElement('span');
+        head.style.color = 'red';
+        head.style.textShadow =  '2px 2px 4px #0008';
+        head.innerHTML = arr[i].name;
+        block.appendChild(head);
+
+        var innerBlock = document.createElement('div');
+        innerBlock.className = 'inBlock';
+        block.appendChild(innerBlock);
+
+        var imageBg = document.createElement('img');
+        imageBg.src = arr[i].image;
+        innerBlock.appendChild(imageBg);
+
+        var textBlock = document.createElement('div');
+        var text = document.createTextNode('This is new Boat, you will\
+        like this ' + arr[i].description + ' Boat which is why you should choose\
+        our Boat ');
+        textBlock.className = 'inBlock';
+        block.appendChild(textBlock);
+        textBlock.appendChild(text);
+
+        var cost = document.createElement('span');
+        cost.innerHTML = arr[i].price;
+        block.appendChild(cost);
+
+        var btn = document.createElement('div');
+        btn.className = 'button';
+        btn.innerHTML = 'Buy it now!';
+        block.appendChild(btn);
+
+    }
+
+
+  </script>
+</body>
 </html>
